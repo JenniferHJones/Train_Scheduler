@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
-    $("#add-employee-btn").on("click", function () {
+    $("#add-train").on("click", function () {
         event.preventDefault();
 
         var empName = $("#employee-name-input").val().trim();
