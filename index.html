@@ -23,7 +23,8 @@
             <h1>
                 <i class="fas fa-train"> Anytime is Train Time</i>
             </h1>
-            <p id="currentTime">Current Locale Time: </p>
+            <br>
+            <h5 id="currentTime">Current Locale Time: </h5>
         </div>
 
 
@@ -38,11 +39,12 @@
                         <table class="table" id="trainTable">
                             <thead>
                                 <tr>
-                                    <th scope="col-sm-3">Train Name</th>
-                                    <th scope="col-sm-3">Destination</th>
-                                    <th scope="col-sm-2">Frequency (min)</th>
-                                    <th scope="col-sm-2">Next Arrival</th>
-                                    <th scope="col-sm-2">Minutes Away</th>
+                                    <th scope="col-sm">Train Name</th>
+                                    <th scope="col-sm">Destination</th>
+                                    <th scope="col-sm">Frequency <br>(min)</th>
+                                    <th scope="col-sm">Next <br>Arrival</th>
+                                    <th scope="col-sm">Minutes <br>Away</th>
+                                    <th scope="col-sm" id="remove">Remove <br>Train</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -65,7 +67,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="destination">Destination</label>
+                                <label for="destination">Destination (City, State)</label>
                                 <input type="text" class="form-control" id="destination">
                             </div>
 
@@ -80,9 +82,8 @@
                             </div>
 
                             <button type="submit" class="btn btn-default bg-success text-white btn-sm" id="add-train">Add Train</button>
-                            <!-- <button class="btn btn-default bg-success text-white" id="clear-all">
-                                <i class="fa fa-trash"></i> Clear Results</button> -->
-
+                            <button class="btn btn-default bg-success text-white btn-sm  ml-4" id="clear-all">
+                                <i class="fa fa-trash"></i> Clear Form</button>
                         </form>
                     </div>
                 </div>

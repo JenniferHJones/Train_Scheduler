@@ -63,6 +63,8 @@ $(document).ready(function () {
         var nextArrival = moment().add(minutesAway, "minutes");
         console.log("arrival", nextArrival.format("hh:mm A"));
 
+        var key = db.key;
+
         // create new row to store the data & append it
         var newRow = $("<tr>");
         newRow.append($("<td>" + dbObj.name + "</td>"));
@@ -70,6 +72,7 @@ $(document).ready(function () {
         newRow.append($("<td>" + dbObj.frequency + "</td>"));
         newRow.append($("<td>" + nextArrival.format("hh:mm A") + "</td>"));
         newRow.append($("<td>" + minutesAway + "</td>"));
+        newRow.append($("<td><button class='remove btn btn-success btn-sm' data-key='" + key + "'>X</button></td>"));
 
         // append new row
         $("tbody").append(newRow);
@@ -77,4 +80,11 @@ $(document).ready(function () {
     }, function (e) {
         alert(e)
     });
+
+    $(document).on("click", ".remove", function() {
+        console.log("click");
+        keyref = $(this).attr("data-key");
+        database.ref().child(keyref).remove();
+        window.location.reload();
+      });
 })
