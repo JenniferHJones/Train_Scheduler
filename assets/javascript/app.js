@@ -36,10 +36,15 @@ $(document).ready(function () {
 
     var currentTime = moment().format("LT");
     $("#currentTime").append(currentTime);
-    console.log("current time",currentTime);
+    console.log("current time", currentTime);
 
     // current time
     var now = moment();
+
+    // interval to refresh the page every minute
+    setInterval(function () {
+        window.location.reload();
+    }, 60000);
 
     // calling values from Firebase
     database.ref().on("child_added", function (db) {
@@ -50,7 +55,7 @@ $(document).ready(function () {
         // create moment.js object for train time
         var startTime = moment(dbObj.time, "HH:mm");
         console.log("start time: ", startTime.format("HH:mm"));
-        
+
         // change frequency string into a number
         var trainFrequency = parseInt(dbObj.frequency);
         console.log("frequency", trainFrequency);
@@ -82,14 +87,9 @@ $(document).ready(function () {
     });
 
     // on click function to remove train entry from page & Firebase
-    $(document).on("click", ".remove", function() {
+    $(document).on("click", ".remove", function () {
         keyref = $(this).attr("data-key");
         database.ref().child(keyref).remove();
         window.location.reload();
-      });
-
-      // interval to refresh the page every minute
-      setInterval(function() { 
-        window.location.reload(); 
-    }, 60000);
+    });
 })
