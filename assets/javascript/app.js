@@ -81,10 +81,15 @@ $(document).ready(function () {
         alert(e)
     });
 
+    // on click function to remove train entry from page & Firebase
     $(document).on("click", ".remove", function() {
-        console.log("click");
         keyref = $(this).attr("data-key");
         database.ref().child(keyref).remove();
         window.location.reload();
       });
+
+      // interval to refresh the page every minute
+      setInterval(function() { 
+        window.location.reload(); 
+    }, 60000);
 })

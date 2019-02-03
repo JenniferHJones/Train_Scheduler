@@ -19,32 +19,31 @@
 
     <div class="container">
 
-        <div class="jumbotron bg-success text-white text-center">
-            <h1>
-                <i class="fas fa-train"> Anytime is Train Time</i>
-            </h1>
-            <br>
-            <h5 id="currentTime">Current Locale Time: </h5>
+        <div class="card" id="header">
+            <div class="card-header bg-success text-white text-center">
+                <h1><i class="fas fa-train"> Green Track Trains</i></h1>
+                <br>
+                <h5 id="currentTime">Current Locale Time: </h5>
+            </div>
         </div>
 
-
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-12">
                 <div class="card" id="schedule">
                     <div class="card-header bg-success text-white">
-                        <h4 class="text-center">Current Train Schedule</h4>
+                        <h5 class="text-center">Current Train Schedule</h5>
                     </div>
 
                     <div class="card-body border border-success">
                         <table class="table" id="trainTable">
                             <thead>
                                 <tr>
-                                    <th scope="col-sm">Train Name</th>
-                                    <th scope="col-sm">Destination</th>
-                                    <th scope="col-sm">Frequency <br>(min)</th>
-                                    <th scope="col-sm">Next <br>Arrival</th>
-                                    <th scope="col-sm">Minutes <br>Away</th>
-                                    <th scope="col-sm" id="remove">Remove <br>Train</th>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency <br>(min)</th>
+                                    <th scope="col">Next <br>Arrival</th>
+                                    <th scope="col">Minutes <br>Away</th>
+                                    <th scope="col" id="remove">Remove <br>Train</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,10 +52,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-12">
                 <div class="card" id="addTrain">
                     <div class="card-header bg-success text-white">
-                        <h4 class="text-center">Add Train</h4>
+                        <h5 class="text-center">Add New Train</h5>
                     </div>
 
                     <div class="card-body border border-success">
@@ -81,7 +80,8 @@
                                 <input type="text" class="form-control" id="frequency">
                             </div>
 
-                            <button type="submit" class="btn btn-default bg-success text-white btn-sm" id="add-train">Add Train</button>
+                            <button type="submit" class="btn btn-default bg-success text-white btn-sm" id="add-train">Add
+                                Train</button>
                             <button class="btn btn-default bg-success text-white btn-sm  ml-4" id="clear-all">
                                 <i class="fa fa-trash"></i> Clear Form</button>
                         </form>
